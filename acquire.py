@@ -38,3 +38,11 @@ def wrangle_store_data():
         df = get_store_data()
         
     return df
+
+
+def get_opsd_data():
+    if os.path.exists('opsd.csv'):
+        return pd.read_csv('opsd.csv')
+    df = pd.read_csv('https://raw.githubusercontent.com/jenfly/opsd/master/opsd_germany_daily.csv')
+    df.to_csv('opsd.csv', index=False)
+    return df
