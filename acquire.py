@@ -22,7 +22,7 @@ def get_store_data():
     
     df = pd.read_sql(query, get_db_url('tsa_item_demand'))
     
-    df.to_csv('tsa_item_demand.csv', index=False)
+    df.to_csv('tsa_store_data.csv', index=False)
     
     return df
 
